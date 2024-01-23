@@ -17,5 +17,6 @@ button1.addEventListener("click",async()=>{
     const city = input.value;
     const result = await getdata(city);
     console.log (result);
-    // cityname.innerText = `${result.location.name},${result.location.region} - ${result.location.country}`
+    cityname.innerText = `${result.location.name},${result.location.region} - ${result.location.country}`
+    // time.innerText = `${r}`
 })  
