@@ -1,5 +1,9 @@
-const button = document.getElementById("search-button")
-const cityname = document.getElementById("cityname")
+const button1 = document.getElementById("search-button")
+const input = document.getElementById("cityname")
+
+const cityname = document.getElementById("city-name")
+const time = document.getElementById("time")
+const temp = document.getElementById("temp")
 
 
 async function getdata(city)
@@ -8,9 +12,10 @@ async function getdata(city)
     return await promise.json();   
 }
 
-button.addEventListener("click",async()=>{
+button1.addEventListener("click",async()=>{
 
-    const city = cityname.value;
+    const city = input.value;
     const result = await getdata(city);
     console.log (result);
+    // cityname.innerText = `${result.location.name},${result.location.region} - ${result.location.country}`
 })  
