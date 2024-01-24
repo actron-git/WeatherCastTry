@@ -1,9 +1,9 @@
 const button1 = document.getElementById("search-button")
 const input = document.getElementById("cityname")
 
-const cityname = document.getElementById("city-name")
-const time = document.getElementById("time")
-const temp = document.getElementById("temp")
+const cityName = document.getElementById("city-name")
+const cityTime = document.getElementById("time")
+const cityTemp = document.getElementById("temp")
 
 
 async function getdata(city)
@@ -17,6 +17,9 @@ button1.addEventListener("click",async()=>{
     const city = input.value;
     const result = await getdata(city);
     console.log (result);
-    cityname.innerText = `${result.location.name},${result.location.region} - ${result.location.country}`
-    // time.innerText = `${r}`
+    cityName.innerText = `${result.location.name},${result.location.region} - ${result.location.country}`
+    cityTime.innerText = result.location.localtime;
+    cityTemp.innerText = result.current.temp_c;
+
+
 })  
